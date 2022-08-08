@@ -30,8 +30,8 @@ spec:
         image: richardchesterwood/k8s-fleetman-webapp-angular:release0-multi
 
 ---
-apiVersion: argoproj.io/v1alpha1
-kind: Rollout
+apiVersion: v1
+kind: pod
 metadata:
   name: queue
   labels:
@@ -40,14 +40,3 @@ spec:
   containers:
   - name: queue
     image: richardchesterwood/k8s-fleetman-queue:release1
-  strategy:
-    canary:
-      steps:
-      - setWeight: 20
-      - pause: {duration: 30}
-      - setWeight: 40
-      - pause: {duration: 30}
-      - setWeight: 60
-      - pause: {duration: 30}
-      - setWeight: 80
-      - pause: {duration: 30}
