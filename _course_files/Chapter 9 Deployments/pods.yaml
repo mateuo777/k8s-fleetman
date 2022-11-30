@@ -19,7 +19,7 @@ spec:
       - pause: {duration: 30}
       - setWeight: 80
       - pause: {duration: 30}
-  replicas: 3
+  replicas: 1
   template: # template for the pods
     metadata:
       labels:
@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: richardchesterwood/k8s-fleetman-webapp-angular:release0
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release1
 
 ---
 apiVersion: v1
